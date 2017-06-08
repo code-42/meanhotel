@@ -1,2 +1,16 @@
-<h1>Information on {{ vm.hotel.name }}</h1>
+<h1>Information on {{ vm.hotel.name }} - {{ vm.stars }} stars</h1>
+
+<p>{{ vm.hotel.location.address }}</p>
+
 <p>{{ vm.hotel.description }}</p>
+
+<p>This hotel offers the following services:</p>
+
+<ul>
+  <li ng-repeat="service in vm.hotel.services">{{ service }}</li>
+</ul>
+
+<h3>Reviews</h3>
+<ul>
+  <li ng-repeat="review in vm.hotel.reviews"><strong>{{ review.name }} says: <strong>{{ review.review }}</li>
+</ul>

@@ -7,4 +7,3 @@ function HotelsController($http){
 	 	vm.hotels = response.data;
     });
 }
-

@@ -1,16 +1,14 @@
-angular.module('meanhotel', ['ngRoute'])
-    .config(config)
-    .controller('HotelsController', HotelsController);
+angular.module('meanhotel', ['ngRoute']).config(config);
 
-function config($routeProvider){        
+function config($locationProvider, $routeProvider){
+    $locationProvider.html5Mode(false).hashPrefix('');
     $routeProvider.when('/', {
-        templateUrl: 'angular-app/hotels.html',
+        templateUrl: 'angular-app/hotel-list/hotels.html',
         controller: HotelsController,
         controllerAs: 'vm'
-    });
-}
-
-function HotelsController(){
-    var vm = this;
-    vm.title = 'MEAN Hotel';
+    }).when('/hotel/:id', {
+        templateUrl: 'angular-app/hotel-display/hotel.html',
+        controller: HotelController,
+        controllerAs: 'vm'
+     });
 }

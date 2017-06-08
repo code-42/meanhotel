@@ -12,7 +12,7 @@ router
 router
   .route('/hotels/:hotelId')
   .get(ctrlHotels.hotelsGetOne)
-  .put(ctrlHotels.hotelsUpdateOne);
+//  .put(ctrlHotels.hotelsUpdateOne);
 
 router
   .route('/hotels/:hotelId/reviews')

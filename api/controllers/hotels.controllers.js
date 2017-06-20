@@ -96,7 +96,7 @@ module.exports.hotelsGetAll = function(req, res){
 				.status(500)
 				.json(err);
 		} else {
-		  console.log("Found this many hotels", hotels.length);
+		  console.log("Found " + hotels.length + "  hotels");
       res
         .json(hotels);
 		}

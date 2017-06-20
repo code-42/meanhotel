@@ -4,6 +4,7 @@ function HotelsController(hotelDataFactory){
     var vm = this;
     vm.title = 'MEAN Hotel';
     hotelDataFactory.hotelList().then(function (response) {
+      console.log("response == " + response);
 	 	  vm.hotels = response;
     });
 }

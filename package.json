@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/code-42/mean-stack-app#readme",
   "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mongodb": "^2.2.27",

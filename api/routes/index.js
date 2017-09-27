@@ -21,7 +21,7 @@ router
 router
   .route('/hotels/:hotelId/reviews')
   .get(ctrlReviews.reviewsGetAll)
-  // .post(ctrlUsers.authenticate, ctrlReviews.reviewsAddOne);
+  .post(ctrlUsers.authenticate, ctrlReviews.reviewsAddOne);
 
 router
   .route('/hotels/:hotelId/reviews/:reviewId')

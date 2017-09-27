@@ -14,30 +14,6 @@ mongoose.connection.on('disconnected', function() {
   console.log('Mongoose disconnected');
 });
 
-<<<<<<< HEAD
-// process.on('SIGINT', function(){
-// 	mongoose.connection.close(function(){
-// 		console.log('Mongoose disconnected through app termination (SIGINT)');
-// 		process.exit(0);
-// 	});
-// });
-//
-// process.on('SIGTERM', function(){
-// 	mongoose.connection.close(function(){
-// 		console.log('Mongoose disconnected through app termination (SIGINT)');
-// 		process.exit(0);
-// 	});
-// });
-//
-// process.once('SIGUSR2', function(){
-// 	mongoose.connection.close(function(){
-// 		console.log('Mongoose disconnected through app termination (SIGUSR2)');
-// 		process.kill(process.pid, 'SIGUSR2');
-// 	});
-// });
-
-=======
->>>>>>> meanAuth
 // CAPTURE APP TERMINATION / RESTART EVENTS
 // To be called when process is restarted or terminated
 function gracefulShutdown(msg, callback) {
@@ -66,12 +42,6 @@ process.on('SIGTERM', function() {
   });
 });
 
-<<<<<<< HEAD
-// bring in schemas and models
-require('./hotels.model.js');
-require('./users.model');
-=======
 // BRING IN YOUR SCHEMAS & MODELS
 require('./hotels.model');
 require('./users.model');
->>>>>>> meanAuth

@@ -3,6 +3,7 @@ var dburl = 'mongodb://localhost:27017/meanhotel';
 
 mongoose.connect(dburl);
 
+// connection events
 mongoose.connection.on('connected',function(){
 	console.log('Mongoose connnected to ' + dburl);
 });
@@ -15,6 +16,7 @@ mongoose.connection.on('error',function(err){
 	console.log('Mongoose connnection error: ' + err);
 });
 
+// graceful shutdown video 49 is a little different
 process.on('SIGINT', function(){
 	mongoose.connection.close(function(){
 		console.log('Mongoose disconnected through app termination (SIGINT)');
@@ -37,4 +39,5 @@ process.once('SIGUSR2', function(){
 });
 
 // bring in schemas and models
-require('./hotels.model.js');
+require('./hotels.model');
+require('./users.model');

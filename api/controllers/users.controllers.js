@@ -48,6 +48,7 @@ module.exports.login = function(req, res) {
   });
 };
 
+// goto jwt.io to see and debug jwt tokens
 module.exports.authenticate = function(req, res, next) {
   var headerExists = req.headers.authorization;
   if (headerExists) {

@@ -1,0 +1,2 @@
+first need to run ./mongod in terminal 
+then run nodemon

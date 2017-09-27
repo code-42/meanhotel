@@ -1,5 +1,5 @@
 require('./api/data/db.js');
-console.log("inside app.js");
+
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 
 var routes = require('./api/routes');
 
-app.set('port', 3000);
+// app.set('port', 3000);
+app.set('port', process.env.PORT);
 
 app.use(function (req, res, next) {
     console.log(req.method, req.url);

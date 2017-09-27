@@ -21,10 +21,12 @@
   },
   "homepage": "https://github.com/code-42/mean-stack-app#readme",
   "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mongodb": "^2.2.28",
-    "mongoose": "^4.10.4"
+    "mongoose": "^4.11.13"
   },
   "devDependencies": {
     "mocha": "^3.4.2"

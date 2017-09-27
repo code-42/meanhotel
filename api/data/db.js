@@ -3,18 +3,18 @@ var dburl = 'mongodb://localhost:27017/meanhotel';
 var retry = null;
 mongoose.connect(dburl);
 
-mongoose.connection.on('connected',function(){
-	console.log('Mongoose connnected to ' + dburl);
+// CONNECTION EVENTS
+mongoose.connection.on('connected', function() {
+  console.log('Mongoose connected to ' + dburl);
+});
+mongoose.connection.on('error', function(err) {
+  console.log('Mongoose connection error: ' + err);
+});
+mongoose.connection.on('disconnected', function() {
+  console.log('Mongoose disconnected');
 });
 
-mongoose.connection.on('disconnected',function(){
-	console.log('Mongoose disconnected');
-});
-
-mongoose.connection.on('error',function(err){
-	console.log('Mongoose connnection error: ' + err);
-});
-
+<<<<<<< HEAD
 // process.on('SIGINT', function(){
 // 	mongoose.connection.close(function(){
 // 		console.log('Mongoose disconnected through app termination (SIGINT)');
@@ -36,6 +36,8 @@ mongoose.connection.on('error',function(err){
 // 	});
 // });
 
+=======
+>>>>>>> meanAuth
 // CAPTURE APP TERMINATION / RESTART EVENTS
 // To be called when process is restarted or terminated
 function gracefulShutdown(msg, callback) {
@@ -64,6 +66,12 @@ process.on('SIGTERM', function() {
   });
 });
 
+<<<<<<< HEAD
 // bring in schemas and models
 require('./hotels.model.js');
 require('./users.model');
+=======
+// BRING IN YOUR SCHEMAS & MODELS
+require('./hotels.model');
+require('./users.model');
+>>>>>>> meanAuth

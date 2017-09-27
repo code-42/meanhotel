@@ -17,7 +17,11 @@ router
   // .put(ctrlHotels.hotelsUpdateOne);
 
 
+<<<<<<< HEAD
 // review routes
+=======
+// Review routes
+>>>>>>> meanAuth
 router
   .route('/hotels/:hotelId/reviews')
   .get(ctrlReviews.reviewsGetAll)
@@ -28,7 +32,6 @@ router
   .get(ctrlReviews.reviewsGetOne)
   .put(ctrlReviews.reviewsUpdateOne);
 
-// authentication
 router
   .route('/users/register')
   .post(ctrlUsers.register);

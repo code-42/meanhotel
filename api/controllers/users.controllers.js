@@ -1,7 +1,11 @@
 var mongoose = require('mongoose');
 var User     = mongoose.model('User');
 var bcrypt   = require('bcrypt-nodejs');
+<<<<<<< HEAD
 // var jwt      = require('jsonwebtoken');
+=======
+var jwt      = require('jsonwebtoken');
+>>>>>>> meanAuth
 
 module.exports.register = function(req, res) {
   console.log('registering user');
@@ -33,6 +37,7 @@ module.exports.login = function(req, res) {
   User.findOne({
     username: username
   }).exec(function(err, user) {
+<<<<<<< HEAD
     // if (err) {
     //   console.log(err);
     //   res.status(400).json(err);
@@ -49,6 +54,20 @@ module.exports.login = function(req, res) {
         res.status(401).json('Unauthorized');
       }
 
+=======
+    if (err) {
+      console.log(err);
+      res.status(400).json(err);
+    } else {
+      if (bcrypt.compareSync(password, user.password)) {
+        console.log('User found', user);
+        var token = jwt.sign({ username: user.username }, 's3cr3t', { expiresIn: 3600 });
+        res.status(200).json({success: true, token: token});
+      } else {
+        res.status(401).json('Unauthorized');
+      }
+    }
+>>>>>>> meanAuth
   });
 };
 
@@ -68,4 +87,8 @@ module.exports.authenticate = function(req, res, next) {
   } else {
     res.status(403).json('No token provided');
   }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> meanAuth

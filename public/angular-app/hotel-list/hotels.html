@@ -1,0 +1,5 @@
+<h1>Welcome to the {{ vm.title }} !</h1>
+
+<ul>
+	<li ng-repeat="hotel in vm.hotels"><a ng-href="#/hotel/{{ hotel._id }}">{{ hotel.name }}</a></li>
+</ul>

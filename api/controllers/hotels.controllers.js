@@ -49,7 +49,7 @@ module.exports.hotelsGetAll = function(req, res){
   console.log('GET the hotels');
   console.log(req.query);
 
-  var offset = 1;
+  var offset = 0;
   var count = 10;
   var maxCount = 10;
 
@@ -87,8 +87,8 @@ module.exports.hotelsGetAll = function(req, res){
 
 	Hotel
 	.find()
-  .skip(offset)
-  .limit(count)
+   .skip(offset)
+   .limit(count)
 	.exec(function(err, hotels){
 		if(err){
 			console.log("Error finding hotels");
@@ -96,10 +96,11 @@ module.exports.hotelsGetAll = function(req, res){
 				.status(500)
 				.json(err);
 		} else {
-		  console.log("Found hotels", hotels.length);
+		  console.log("Found " + hotels.length + "  hotels");
       res
         .json(hotels);
 		}
+		console.log("found " + offset + " " + count + " hotels");
 	});
 };
 
@@ -123,7 +124,7 @@ module.exports.hotelsGetOne = function(req, res){
         response.status = 404;
         response.message = {
           "message" : "Hotel ID not found" + id
-          };
+        };
       }
       res
         .status(response.status)
@@ -174,10 +175,4 @@ module.exports.hotelsAddOne = function(req, res){
 
 };
 
-module.exports.hotelsUpdateOne = function(req, res){
-
-
-
-};
-
-
+// module.exports.hotelsUpdateOne = function(req, res){};

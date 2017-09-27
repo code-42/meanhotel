@@ -10,6 +10,7 @@ module.exports.reviewsGetAll = function(req, res) {
     .findById(id)
     .select('reviews')
     .exec(function(err, doc) {
+      console.log('doc ==', doc);
       var response = {
         status : 200,
         message : []
@@ -52,10 +53,10 @@ module.exports.reviewsGetOne = function(req, res) {
         response.status = 500;
         response.message = err;
       } else if(!hotel) {
-        console.log("Hotel id not found in database", id);
+        console.log("Hotel id not found in database", hotelId);
         response.status = 404;
         response.message = {
-          "message" : "Hotel ID not found " + id
+          "message" : "Hotel ID not found " + hotelId
         };
       } else {
         // Get the review
@@ -106,6 +107,7 @@ module.exports.reviewsAddOne = function(req, res){
     .findById(id)
     .select('reviews')
     .exec(function(err, doc) {
+      console.log("doc == " + doc);
       var response = {
         status : 200,
         message : []
